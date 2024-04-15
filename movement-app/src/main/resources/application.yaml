@@ -1,0 +1,6 @@
+server:
+  port: 8084
+
+client-credentials:
+  movement-service:
+    client-id: service-B

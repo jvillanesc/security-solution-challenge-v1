@@ -1,0 +1,31 @@
+server:
+  port: 8082
+spring:
+  data:
+    redis:
+      connect-timeout: 2000
+      host: 127.0.0.1
+      port: 6379
+
+token-client:
+  urls:
+    base-url: http://localhost:8081
+    post-token-url: /api/tokens
+    
+deposit-client:
+  urls:
+    base-url: http://localhost:8083
+    post-deposit-url: /api/deposits
+
+movement-client:
+  urls:
+    base-url: http://localhost:8084
+    get-movement-url: /api/movements
+
+client-credentials:
+  deposit-service:
+    client-id: service-A
+    password: xxxx
+  movement-service:
+    client-id: service-B
+    password: xxxx

@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "5694c03f-d4a8-4826-9d38-748c71f76511",
+		"name": "IBK - Token",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9983530"
+	},
+	"item": [
+		{
+			"name": "ibk-app (Deposit)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\": \"service-A\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/deposits",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"deposits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ibk-app (Movements)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base-url}}/api/movements",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"movements"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token-app (Generate Token (Deposits))",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\": \"service-A\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/tokens",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "token-app (Generate Token (Movements))",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"clientId\": \"service-B\",\r\n    \"password\": \"abcd\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base-url}}/api/tokens",
+					"host": [
+						"{{base-url}}"
+					],
+					"path": [
+						"api",
+						"tokens"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base-url",
+			"value": "http://localhost:8082",
+			"type": "string"
+		}
+	]
+}

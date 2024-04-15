@@ -1,0 +1,49 @@
+version: "3.7"
+
+networks:
+  encora-net:
+    name: encora-net
+    driver: bridge
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis-hexagonal
+    ports:
+      - "6379:6379"
+    networks:
+      - encora-net
+
+  movement-app:
+    build: ./movement-app
+    ports:
+      - "8084:8084"
+    networks:
+      - encora-net
+
+  deposit-app:
+    build: ./deposit-app
+    ports:
+      - "8083:8083"
+    networks:
+      - encora-net
+
+  token-app:
+    build: ./token-app
+    ports:
+      - "8081:8081"
+    networks:
+      - encora-net
+
+  ibk-app:
+    depends_on:
+      - redis
+      - movement-app
+      - deposit-app
+      - token-app
+    build: ./ibk-app
+    ports:
+      - "8082:8082"
+    networks:
+      - encora-net
+
